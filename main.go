@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	question1 "seven-hunter-assignment/question-1"
 	question2 "seven-hunter-assignment/question-2"
@@ -36,6 +37,12 @@ func main() {
 	}
 	fmt.Println("")
 	fmt.Println("")
+
+	skipServer := flag.Bool("skip-server", false, "Run the application with skip server")
+	flag.Parse()
+	if *skipServer {
+		return
+	}
 
 	var wg sync.WaitGroup
 	wg.Add(2)

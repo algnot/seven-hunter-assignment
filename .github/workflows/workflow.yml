@@ -1,0 +1,24 @@
+name: Run Q1-Q2
+
+on: [push]
+
+jobs:
+  RunQ1Q2:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: 1.24
+
+      - name: Install dependencies
+        run: go mod tidy
+
+      - name: Build and run
+        run: |
+          go run main.go --skip-server
