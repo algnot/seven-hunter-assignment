@@ -1,0 +1,19 @@
+syntax = "proto3";
+option go_package = "proto-gen/;proto";
+
+package beef;
+
+service Beef {
+  rpc BeefSummary (BeefSummaryRequest) returns (BeefSummaryResponse);
+}
+
+message BeefSummaryRequest { }
+
+message BeefItem {
+  string name = 1;
+  int64 count = 2;
+}
+
+message BeefSummaryResponse {
+  repeated BeefItem beefs = 1;
+}
