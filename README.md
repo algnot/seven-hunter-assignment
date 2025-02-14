@@ -8,8 +8,8 @@
 ในส่วนของข้อ 3 สามารถ setup project เพื่อรันดูได้เลยครับ หรือสามารถลองยิงแบบเร็ว ๆ ได้ที่
 
 - Link for production
-  - API `กำลัง deploy...`
-  - GRPC `กำลัง deploy...` โดยใช้ proto spec ตาม section `Setup project with docker`
+  - API https://seven-hunter-http.tongla.dev/beef/summary
+  - GRPC `34.126.83.199:50051` โดยใช้ proto spec ตาม section `Setup project with docker`
 
 ### 📍 Dependencies
 - ✅ golang v.1.24
