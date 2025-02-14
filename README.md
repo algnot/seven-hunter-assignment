@@ -11,6 +11,10 @@
   - API https://seven-hunter-http.tongla.dev/beef/summary
   - GRPC `34.126.83.199:50051` โดยใช้ proto spec ตาม section `Setup project with docker`
 
+- สามารถดู unit test ได้ที่ pipeline
+![img_1.png](img_1.png)
+![img_2.png](img_2.png)
+
 ### 📍 Dependencies
 - ✅ golang v.1.24
 - 📄 หรือสามารถรัน project ผ่าน docker-compose ได้ครับ 
