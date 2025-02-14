@@ -19,6 +19,6 @@ jobs:
       - name: Install dependencies
         run: go mod tidy
 
-      - name: Build and run
+      - name: Run
         run: |
           go run main.go --skip-server
