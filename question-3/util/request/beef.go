@@ -7,7 +7,13 @@ import (
 	"seven-hunter-assignment/question-3/util/config"
 )
 
-func GetBeefFromApi() (string, error) {
+type BeefAPI interface {
+	GetBeefFromApi() (string, error)
+}
+
+type BeefAPIImpl struct{}
+
+func (b *BeefAPIImpl) GetBeefFromApi() (string, error) {
 	appConfig := config.GetAppConfig()
 	url := fmt.Sprintf("%s/api/?type=meat-and-filler&paras=99&format=text", appConfig.CommonConfig.BeefApi)
 	method := "GET"

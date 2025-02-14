@@ -6,10 +6,11 @@ import (
 	"log"
 	"seven-hunter-assignment/question-3/logic"
 	config2 "seven-hunter-assignment/question-3/util/config"
+	"seven-hunter-assignment/question-3/util/request"
 )
 
 func HandleGetBeef(c *fiber.Ctx) error {
-	beefLogic := logic.GetBeefLogic()
+	beefLogic := logic.GetBeefLogic(&request.BeefAPIImpl{})
 	beefs, err := beefLogic.GetBeefSummary()
 	if err != nil {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{

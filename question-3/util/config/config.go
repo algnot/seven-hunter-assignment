@@ -9,7 +9,7 @@ type AppConfig struct {
 }
 
 type CommonConfig struct {
-	BeefApi  string `envconfig:"BEEF_API" default:"localhost"`
+	BeefApi  string `envconfig:"BEEF_API" default:"http://localhost"`
 	HttpPort string `envconfig:"HTTP_PORT" default:"8080"`
 	GrpcPort string `envconfig:"GRPC_PORT" default:"50051"`
 }

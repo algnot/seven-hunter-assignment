@@ -48,7 +48,7 @@ func generateSequences(encoded string, seq []int, minSeq *[]int, minSum *int) {
 	}
 }
 
-func AnswerQuestion2(encoded string) {
+func AnswerQuestion2(encoded string) string {
 	minSum := math.MaxInt32
 	var minSeq []int
 
@@ -61,4 +61,5 @@ func AnswerQuestion2(encoded string) {
 	}
 
 	fmt.Printf("%s: %s\n", encoded, output)
+	return output
 }

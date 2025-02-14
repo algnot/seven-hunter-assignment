@@ -8,6 +8,7 @@ import (
 	"seven-hunter-assignment/question-3/logic"
 	"seven-hunter-assignment/question-3/proto/gen"
 	"seven-hunter-assignment/question-3/util/config"
+	"seven-hunter-assignment/question-3/util/request"
 )
 
 type server struct {
@@ -15,7 +16,7 @@ type server struct {
 }
 
 func (s *server) BeefSummary(ctx context.Context, req *proto.BeefSummaryRequest) (*proto.BeefSummaryResponse, error) {
-	beefLogic := logic.GetBeefLogic()
+	beefLogic := logic.GetBeefLogic(&request.BeefAPIImpl{})
 	beefs, err := beefLogic.GetBeefSummary()
 	if err != nil {
 		return nil, err

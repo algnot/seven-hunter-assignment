@@ -2,7 +2,6 @@ package logic
 
 import (
 	"seven-hunter-assignment/question-3/model"
-	"seven-hunter-assignment/question-3/util/config"
 	"seven-hunter-assignment/question-3/util/request"
 	"strings"
 )
@@ -12,13 +11,13 @@ type BeefLogic interface {
 }
 
 type beefLogic struct {
-	config config.AppConfig
+	Request request.BeefAPI
 }
 
 func (b beefLogic) GetBeefSummary() ([]model.Beef, error) {
 	var result []model.Beef
 
-	beefFromApi, err := request.GetBeefFromApi()
+	beefFromApi, err := b.Request.GetBeefFromApi()
 	if err != nil {
 		return nil, err
 	}
@@ -37,6 +36,8 @@ func (b beefLogic) GetBeefSummary() ([]model.Beef, error) {
 	return result, nil
 }
 
-func GetBeefLogic() BeefLogic {
-	return &beefLogic{}
+func GetBeefLogic(request request.BeefAPI) BeefLogic {
+	return &beefLogic{
+		Request: request,
+	}
 }
